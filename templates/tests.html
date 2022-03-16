@@ -1,0 +1,45 @@
+<p class="text-center mt-3 mb-0">{percentage}%</p>
+<div class="progress">
+    <div class="progress-bar bg-{percentage_color}" role="progressbar" style="width: {percentage}%"
+        aria-valuenow="{percentage}" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="d-flex mt-3 justify-content-between">
+    <div>
+        <h6>Coding style</h6>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row">Major</th>
+                    <td class="text-end">{majors}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Minor</th>
+                    <td class="text-end">{minors}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Info</th>
+                    <td class="text-end">{infos}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="coverage d-flex">
+        <div><svg class="radial-progress" data-percentage="71" viewBox="0 0 80 80">
+                <circle stroke="var(--bs-gray-200)" class="incomplete" cx="40" cy="40" r="35"></circle>
+                <circle stroke="var(--bs-{coverage_color})" class="complete" cx="40" cy="40" r="35"
+                    style="stroke-dashoffset: {coverage_offset}px;"></circle>
+                <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">{coverage}%</text>
+            </svg>
+            <p class="text-center">Coverage</p>
+        </div>
+        <div>
+            <svg class="radial-progress" data-percentage="71" viewBox="0 0 80 80">
+                <circle stroke="var(--bs-gray-200)" class="incomplete" cx="40" cy="40" r="35"></circle>
+                <circle stroke="var(--bs-{branches_color})" class="complete" cx="40" cy="40" r="35"
+                    style="stroke-dashoffset: {branches_offset}px;"></circle>
+                <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">{branches}%</text>
+            </svg>
+            <p class="text-center">Branches</p>
+        </div>
+    </div>
+</div>

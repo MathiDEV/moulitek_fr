@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    background-color: var(--bs-gray-100);
+}
+
+img {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+#slides {
+    width: 100vw;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+#slides>div {
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    min-width: 100vw;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50%;
+    max-width: 200px;
+    margin-bottom: 50px;
+}
+
+p {
+    max-width: 500px;
+    text-align: center;
+}
+
+#slides>div img {
+    max-height: 300px;
+    margin-bottom: 25px;
+    margin-top: -100px;
+}
+
+form {
+    width: 50%;
+    max-width: 500px;
+}
+
+.fade:not(.show),
+.fade:not(.show) * {
+    pointer-events: none;
+}

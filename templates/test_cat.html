@@ -1,0 +1,42 @@
+<div class="rounded shadow-sm mt-3 mx-4 row bg-white p-4">
+    <div>
+        <h3 class="mb-3">{name}</h3>
+        <div class="row">
+            <div class="col-3">
+                <p class="text-center mt-1 mb-0 pct-info">{percentage}%</p>
+                <div class="progress mb-3">
+                    <div class="progress-bar bg-{percentage_color}" role="progressbar" style="width: {percentage}%" aria-valuenow="{percentage}"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Total</th>
+                            <th class="text-end">{total}</td>
+                        </tr>
+                        <tr>
+                            <td>Passed</th>
+                            <td class="text-end">{passed}</td>
+                        </tr>
+                        <tr>
+                            <td>Failed</th>
+                            <td class="text-end">{failed}</td>
+                        </tr>
+                        <tr>
+                            <td>Crashed</th>
+                            <td class="text-end">{crashed}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-8">
+                <div class="ms-5">
+                    <h5>Tests:</h5>
+                    <ul class="list-group">
+                        {tests_body}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

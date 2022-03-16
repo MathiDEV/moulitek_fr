@@ -27,7 +27,7 @@ if (isset($_SESSION["user"]))
     <div id="slides">
         <div>
             <img src="assets/img/slide1.png">
-            <h2>Bienvenue sur <b>Moulitek</b></h2>
+            <h2>Bienvenue sur <b>Moulitek Test</b></h2>
             <p class="text-secondary">Moulitek est un outil spécialé dans l'audit de fonctionnalité des programmes.</p>
             <p class="text-secondary">Il vous met à disposition un large panel de tests fonctionnels, entièrement
                 automatisés pour vos projets EPITECH.</p>

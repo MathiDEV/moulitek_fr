@@ -1,5 +1,5 @@
 <?php
-$mysql = mysqli_connect($_ENV["DB_HOST"], $_ENV["DB_USER"], $_ENV["DB_PASS"], $_ENV["DB_NAME"]);
+$mysql = mysqli_connect(apache_getenv("DB_HOST"), apache_getenv("DB_USER"), apache_getenv("DB_PASS"), apache_getenv("DB_NAME"));
 if (!$mysql) {
     exit;
 }

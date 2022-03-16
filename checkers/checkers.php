@@ -179,7 +179,7 @@ function check_url()
     $stmt->execute();
     $res = $stmt->get_result();
     $array = $res->fetch_array(MYSQLI_NUM);
-    $token = openssl_decrypt($array[0], apache_getenv("CIPHER"), apache_getenv("CIPHER_KEY"), 0, apache_getenv("CIPHER_IV"));
+    $token = openssl_decrypt($array[0], getenv("CIPHER"), getenv("CIPHER_KEY"), 0, getenv("CIPHER_IV"));
     exec("curl -H \"Authorization: token $token\" https://api.github.com/repos/$matches[1]/$matches[2]", $lines);
     $lines = implode("\n", $lines);
     $lines = json_decode($lines, true);

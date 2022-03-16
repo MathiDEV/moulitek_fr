@@ -63,7 +63,7 @@ $stmt->bind_param("ss",$_POST["project"], $_SESSION["user"]);
 $stmt->execute();
 $id = $mysql->insert_id;
 
-$decrypted = openssl_decrypt($token["token"], apache_getenv("CIPHER"), apache_getenv("CIPHER_KEY"), 0, apache_getenv("CIPHER_IV"));
+$decrypted = openssl_decrypt($token["token"], getenv("CIPHER"), getenv("CIPHER_KEY"), 0, getenv("CIPHER_IV"));
 exec(sprintf("cd %s/moulinette && ./moulitek %s %s %s %s %d", $_SERVER["DOCUMENT_ROOT"], $decrypted, $json["repo"], $json["org"], $json["project"], $id), $lines, $status);
 
 if ($status != 0) {

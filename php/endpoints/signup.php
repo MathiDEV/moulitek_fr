@@ -14,9 +14,9 @@ if (count($errors)) {
     die(0);
 }
 
-$encrypted_password = password_hash($_POST["password"], PASSWORD_BCRYPT, ['cost' => apache_getenv("BCRYPT_COST")]);
+$encrypted_password = password_hash($_POST["password"], PASSWORD_BCRYPT, ['cost' => getenv("BCRYPT_COST")]);
 echo $_POST["password"];
-$encrypted_token = openssl_encrypt($_POST["token"], apache_getenv("CIPHER"), apache_getenv("CIPHER_KEY"), 0, apache_getenv("CIPHER_IV"));
+$encrypted_token = openssl_encrypt($_POST["token"], getenv("CIPHER"), getenv("CIPHER_KEY"), 0, getenv("CIPHER_IV"));
 
 $stmt = $mysql->prepare("INSERT INTO `users`(`name`, `email`, `password`, `token`) VALUES (?,?,?,?)");
 $stmt->bind_param("ssss", $_POST["pseudo"], $_POST["email"], $encrypted_password, $encrypted_token);

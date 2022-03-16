@@ -64,8 +64,8 @@ $stmt->execute();
 $id = $mysql->insert_id;
 
 $decrypted = openssl_decrypt($token["token"], getenv("CIPHER"), getenv("CIPHER_KEY"), 0, getenv("CIPHER_IV"));
-exec(sprintf("cd %s/moulinette && ./moulitek %s %s %s %s %d", $_SERVER["DOCUMENT_ROOT"], $decrypted, $json["repo"], $json["org"], $json["project"], $id), $lines, $status);
-
+exec(sprintf("cd %s/moulinette && ./moulitek %s %s %s %s %d 2>&1", $_SERVER["DOCUMENT_ROOT"], $decrypted, $json["repo"], $json["org"], $json["project"], $id), $lines, $status);
+var_dump($lines);
 if ($status != 0) {
 	$stmt = $mysql->prepare("DELETE FROM `mouli` WHERE `id` = ? AND `user` = ?");
 	$stmt->bind_param("ss", $id, $_SESSION["user"]);

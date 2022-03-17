@@ -88,6 +88,7 @@ require "php/mysql.php";
           </div>
         </div>
       </div>
+    <?php include $_SERVER["DOCUMENT_ROOT"] . "/php/footer.php";?>
 </body>
 
 </html>

@@ -12,7 +12,6 @@ img {
 }
 
 #slides {
-    width: 100vw;
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;

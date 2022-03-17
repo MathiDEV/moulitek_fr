@@ -47,6 +47,7 @@ require "php/mysql.php";
     $repos = $res->fetch_all(MYSQLI_ASSOC);
     showCards($repos);
     ?>
+    </div>
     <div class="modal fade" id="add_project" tabindex="-1" aria-labelledby="add_project_label" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">

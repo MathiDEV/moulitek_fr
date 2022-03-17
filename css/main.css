@@ -118,3 +118,7 @@ pre::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
 }
+
+.footer-dark {
+    margin-top: 100px;
+}

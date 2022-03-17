@@ -21,11 +21,6 @@ require "php/mysql.php";
     <script src="https://kit.fontawesome.com/b269430966.js" crossorigin="anonymous"></script>
     <script src="/js/index.js"></script>
     <link rel="stylesheet" href="/css/main.css">
-    <style>
-    .footer-dark {
-        margin-top: 100px;
-    }
-    </style>
     <title>Moulitek</title>
 </head>
 

@@ -195,6 +195,7 @@ foreach ($tests as $index => $category) {
         const data_coding_style = <?php echo json_encode($coding_style); ?>,
         data_tests = <?php echo json_encode($tests); ?>;
     </script>
+<?php include $_SERVER["DOCUMENT_ROOT"]."/php/footer.php";?>
 </body>
 
 </html>

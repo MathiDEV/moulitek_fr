@@ -45,6 +45,7 @@ if (isset($_SESSION["user"]))
             <a class="mt-2" href="signup"><small>S'inscrire</small></a>
         </div>
     </div>
+    <?php include $_SERVER["DOCUMENT_ROOT"]."/php/footer.php";?>
 </body>
 
 </html>

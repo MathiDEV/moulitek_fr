@@ -146,7 +146,7 @@
         </div>
     </div>
     </div>
-    <div style="background-color: #0d6efd10;" class="py-5 my-5">
+    <div style="background-color: #0d6efd10; margin-bottom: 150px" class="py-5 my-5">
     <div class="container max-w-screen-xl">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8 text-center">

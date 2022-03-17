@@ -1,6 +1,5 @@
 <style>
     .footer-dark {
-        margin-top: 100px;
   padding:50px 0;
   color:#f0f9ff;
   background-color:#282d32;
@@ -91,31 +90,31 @@
 }
 </style>
 <div class="footer-dark">
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>Pages</h3>
-                        <ul>
-                            <li><a href="/">Accueil</a></li>
-                            <li><a href="/credits">Crédits</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>Contribuer</h3>
-                        <ul>
-                            <li><a target="_blank" href="https://github.com/moulitek">Testeurs</a></li>
-                            <li><a target="_blank" href="https://github.com/mathidev/moulitek_fr">Code source</a></li>
-                            <li><a target="_blank" href="mailto:contact@moulitek.fr">Nous contacter</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 item text">
-                        <h3>Moulitek</h3>
-                        <p>Moulitek est un outil spécialisé dans l'audit de fonctionnalités des programmes. Il met à disposition un large panel de tests fonctionnels, entièrement automatisés pour les projets EPITECH.</p>
-                    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Pages</h3>
+                    <ul>
+                        <li><a href="/">Accueil</a></li>
+                        <li><a href="/credits">Crédits</a></li>
+                    </ul>
                 </div>
-                <hr>
-                <p class="copyright">Moulitek © 2022</p>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Contribuer</h3>
+                    <ul>
+                        <li><a target="_blank" href="https://github.com/moulitek">Testeurs</a></li>
+                        <li><a target="_blank" href="https://github.com/mathidev/moulitek_fr">Code source</a></li>
+                        <li><a target="_blank" href="mailto:contact@moulitek.fr">Nous contacter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3>Moulitek</h3>
+                    <p>Moulitek est un outil spécialisé dans l'audit de fonctionnalités des programmes. Il met à disposition un large panel de tests fonctionnels, entièrement automatisés pour les projets EPITECH.</p>
+                </div>
             </div>
-        </footer>
-    </div>
+            <hr>
+            <p class="copyright">Moulitek © 2022</p>
+        </div>
+    </footer>
+</div>

@@ -1,7 +1,9 @@
 <?php
 session_start();
-if (isset($_SESSION["user"]))
+if (isset($_SESSION["user"])) {
     header("Location: /");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -45,7 +47,7 @@ if (isset($_SESSION["user"]))
             <a class="mt-2" href="signup"><small>S'inscrire</small></a>
         </div>
     </div>
-    <?php include $_SERVER["DOCUMENT_ROOT"]."/php/footer.php";?>
+    <?php include $_SERVER["DOCUMENT_ROOT"] . "/php/footer.php";?>
 </body>
 
 </html>

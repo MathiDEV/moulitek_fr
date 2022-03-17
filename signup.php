@@ -1,7 +1,9 @@
 <?php
 session_start();
-if (isset($_SESSION["user"]))
+if (isset($_SESSION["user"])) {
     header("Location: /");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -85,6 +87,7 @@ if (isset($_SESSION["user"]))
             <p class="text-secondary">Tout est prêt ! Bienvenue sur Moulitek !</p>
             <div onclick="submitAndRedirect()" class="btn btn-primary text-white" role="button">Page d'accueil <i class="fas fa-home"
                     aria-hidden="true"></i></a>
+            </div>
         </div>
     </div>
     <div class="modal fade" id="token_modal" tabindex="-1" aria-labelledby="token_modal_label" aria-hidden="true">
@@ -110,6 +113,6 @@ if (isset($_SESSION["user"]))
             </div>
         </div>
     </div>
-    <?php include $_SERVER["DOCUMENT_ROOT"]."/php/footer.php";?>
+    <?php include $_SERVER["DOCUMENT_ROOT"] . "/php/footer.php";?>
 </body>
 </html>

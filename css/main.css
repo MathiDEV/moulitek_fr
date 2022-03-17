@@ -61,7 +61,7 @@ svg.radial-progress circle.complete {
 .card {
     max-width: 600px;
     min-width: 480px;
-    max-height: 350px;
+    max-height: 370px;
 }
 
 .card .card-body {

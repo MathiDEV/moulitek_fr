@@ -24,6 +24,7 @@ img {
 .projects {
     margin-top: 70px;
     gap: 10px;
+    min-height: 70vh;
 }
 
 svg.radial-progress {
@@ -60,6 +61,7 @@ svg.radial-progress circle.complete {
 .card {
     max-width: 600px;
     min-width: 480px;
+    max-height: 350px;
 }
 
 .card .card-body {

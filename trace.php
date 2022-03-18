@@ -151,9 +151,9 @@ function percentageColor($percentage)
                 <div>
                     <svg class="radial-progress" data-percentage="71" viewBox="0 0 80 80">
                         <circle stroke="var(--bs-gray-200)" class="incomplete" cx="40" cy="40" r="35"></circle>
-                        <circle stroke="var(--bs-<?php echo percentageColor($result["coverage"]); ?>)" class="complete" cx="40" cy="40" r="35"
-                            style="stroke-dashoffset: <?php echo 220 - 2.2 * $result["coverage"]; ?>px;"></circle>
-                        <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)"><?php echo $result["coverage"]; ?>%</text>
+                        <circle stroke="var(--bs-<?php echo percentageColor($result["branches"]); ?>)" class="complete" cx="40" cy="40" r="35"
+                            style="stroke-dashoffset: <?php echo 220 - 2.2 * $result["branches"]; ?>px;"></circle>
+                        <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)"><?php echo $result["branches"]; ?>%</text>
                     </svg>
                     <p class="text-center">Branches</p>
                 </div>

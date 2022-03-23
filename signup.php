@@ -100,11 +100,8 @@ if (isset($_SESSION["user"])) {
                 </div>
                 <div class="modal-body">
                     <p>Pour configurer un token d'accès, rend-toi sur tes <a target="_blank"
-                            href="https://github.com/settings/tokens/new">paramètres de tokens personnels</a>.</p>
-                    <p>Crée un nouveau token et choisis <b>Pas d'expiration</b>.</p>
-                    <p>Pour intéragir corrèctement avec tes repos, Moulitek a besoin des
-                        permissions
-                        <b>repo</b> et <b>read:org</b>.</p>
+                            href="https://github.com/settings/tokens/new?description=Moulitek%20Token&scopes=repo%2Cread%3Aorg">paramètres de tokens personnels</a>.</p>
+                    <p>Définissez le temps d'expiration sur <b>Pas d'expiration</b>.</p>
                     <p>Tu peux ensuite cliquer sur <b>Générer le token</b> !</p>
                     <p>Il manque plus qu'à autoriser le token sur l'organisation d'EPITECH via <b>Configurer le SSO</b>.</p>
                 </div>

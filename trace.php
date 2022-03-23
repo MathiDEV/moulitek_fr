@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Europe/Paris');
 session_start();
 if (!isset($_SESSION["user"])) {
     header("Location: /signup");

@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Europe/Paris');
 $no_mouli = "<div class=\"text-muted text-center\"><i style=\"font-size: 50px\" class=\"fas fa-clock mb-2\"></i><p><big>Vous n'avez pas encore lancé de moulinette sur ce projet...</big></p><p>Lancez en une !</p></div>";
 $card = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/templates/card.html");
 $res_body = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/templates/tests.html");

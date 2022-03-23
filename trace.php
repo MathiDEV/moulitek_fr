@@ -68,7 +68,7 @@ function percentageColor($percentage)
     <div class="rounded shadow-sm mt-5 mx-4 d-flex bg-white details-header row p-4">
         <div class="project-sum col-4">
             <h2><?php echo htmlspecialchars($result["name"]); ?></h2>
-            <p class="text-center mt-3 mb-0 mx-5 pct-info"><?php echo $result["percentage"]; ?>%</p>
+            <p class="text-center mt-3 mb-0 mx-5 pct-info"><?php echo round($result["percentage"], 1); ?>%</p>
             <div class="progress mx-5">
                 <div class="progress-bar bg-<?php echo percentageColor($result["percentage"]); ?>" role="progressbar" style="width: <?php echo $result["percentage"]; ?>%" aria-valuenow="<?php echo $result["percentage"]; ?>"
                     aria-valuemin="0" aria-valuemax="100"></div>

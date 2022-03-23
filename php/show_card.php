@@ -56,7 +56,7 @@ function showCards($res)
 			$cs_sum = json_decode($result["cs_sum"], true);
             $body = str_replace(
                 ["{percentage}", "{percentage_color}", "{majors}", "{minors}", "{infos}", "{coverage_color}", "{coverage_offset}", "{coverage}", "{branches_color}", "{branches_offset}", "{branches}"],
-                [$result["percentage"], percentageColor($result["percentage"]), $cs_sum[0], $cs_sum[1], $cs_sum[2], percentageColor($result["coverage"]), 220 - 2.2 * $result["coverage"], $result["coverage"], percentageColor($result["branches"]), 220 - 2.2 * $result["branches"], $result["branches"]],
+                [round($result["percentage"], 1), percentageColor($result["percentage"]), $cs_sum[0], $cs_sum[1], $cs_sum[2], percentageColor($result["coverage"]), 220 - 2.2 * $result["coverage"], $result["coverage"], percentageColor($result["branches"]), 220 - 2.2 * $result["branches"], $result["branches"]],
                 $res_body);
             $details = "href=\"/details/".$result["id"]."\"";
         } else {

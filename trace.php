@@ -159,7 +159,7 @@ foreach ($coding_style["major"]["list"] as $code => $major) {
                         <p class="text-center">Branches</p>
                     </div>
                     <?php
-                    $coverage_data = json_decode($result["cover_data"]);
+                    $coverage_data = json_decode($result["cover_data"], true);
                     if (count($coverage_data) > 0) {
                         echo '<div><table class="table">
                         <thead>

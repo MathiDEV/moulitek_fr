@@ -64,7 +64,7 @@ function showCards($res)
             $body = $no_mouli;
             $details = "";
         }
-        echo (str_replace(["{name}", "{date}", "{card_body}", "{project_id}", "{loading_class}", "{display_loading}", "{loading_content}", "{details_href}"], [htmlspecialchars($repo["name"]), $date, $body, $repo["id"], ...$loading_data, $details], $card));
+        echo (str_replace(["{name}", "{date}", "{card_body}", "{project_id}", "{loading_class}", "{display_loading}", "{loading_content}", "{details_href}", "{history_id}"], [htmlspecialchars($repo["name"]), $date, $body, $repo["id"], ...$loading_data, $details, $repo["id"]], $card));
     }
 }
 

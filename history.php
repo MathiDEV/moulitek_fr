@@ -6,7 +6,7 @@ if (!isset($_SESSION["user"])) {
 if (!isset($_GET["id"])) {
     header("Location: /");
 }
-require $_SERVER["DOCUMENT_ROOT"] . "php/mysql.php";
+require $_SERVER["DOCUMENT_ROOT"] . "/php/mysql.php";
 
 $stmt = $mysql->prepare("SELECT * FROM `repos` WHERE `owner` = ? AND `id` = ?");
 $stmt->bind_param("ss", $_SESSION["user"], $_GET["id"]);
@@ -40,9 +40,9 @@ if (!$repo) {
     <?php include $_SERVER["DOCUMENT_ROOT"] . "/php/header.php";?>
     <div class="projects row mx-2 justify-content-around">
         <?php
-        require $_SERVER["DOCUMENT_ROOT"] . "/php/show_card.php";
-        showCardsHistory($repo);
-        ?>
+require $_SERVER["DOCUMENT_ROOT"] . "/php/show_card.php";
+showCardsHistory($repo);
+?>
     </div>
     <?php include $_SERVER["DOCUMENT_ROOT"] . "/php/footer.php";?>
 </body>

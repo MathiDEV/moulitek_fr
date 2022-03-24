@@ -158,7 +158,8 @@ foreach ($coding_style["major"]["list"] as $code => $major) {
                         </svg>
                         <p class="text-center">Branches</p>
                     </div>
-                    <?php
+                </div>
+                <?php
                     $coverage_data = json_decode($result["cover_data"], true);
                     if (count($coverage_data) > 0) {
                         echo '<div style="max-height: 200px; overflow-y: scroll;"><table class="table">
@@ -189,7 +190,6 @@ foreach ($coding_style["major"]["list"] as $code => $major) {
                         </table></div>';
                     }
                     ?>
-                </div>
             </div>
         </div>
     </div>

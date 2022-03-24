@@ -64,7 +64,7 @@ function percentageColor($percentage)
 </head>
 
 <body>
-    <?php include $_SERVER["DOCUMENT_ROOT"]."/php/header.php";?>
+    <?php include $_SERVER["DOCUMENT_ROOT"] . "/php/header.php";?>
     <div class="rounded shadow-sm mt-5 mx-4 d-flex bg-white details-header row p-4">
         <div class="project-sum col-4">
             <h2><?php echo htmlspecialchars($result["name"]); ?></h2>
@@ -106,9 +106,9 @@ function percentageColor($percentage)
             <div class="shadow-sm col p-2">
                 <h5 class="text-center">Major</h5>
                 <ul class="list-group">
-                <?php 
-					foreach ($coding_style["major"]["list"] as $code => $major) {
-    echo '<li class="list-group-item border-0"><span onclick="showNorm(\'major\', \''.$code.'\')" role="button"><i class="fas fa-search me-1" aria-hidden="true"></i> <b>' . $code . '</b></span>
+                <?php
+foreach ($coding_style["major"]["list"] as $code => $major) {
+    echo '<li class="list-group-item border-0"><span onclick="showNorm(\'major\', \'' . $code . '\')" role="button"><i class="fas fa-search me-1" aria-hidden="true"></i> <b>' . $code . '</b></span>
                     <i class="fas fa-chevron-right" aria-hidden="true"></i> ' . count($major["list"]) . '</li>';
 }
 ?>
@@ -118,7 +118,7 @@ function percentageColor($percentage)
                 <h5 class="text-center">Minor</h5>
                 <ul class="list-group">
                 <?php foreach ($coding_style["minor"]["list"] as $code => $minor) {
-    echo '<li class="list-group-item border-0"><span onclick="showNorm(\'minor\', \''.$code.'\')" role="button"><i class="fas fa-search me-1" aria-hidden="true"></i> <b>' . $code . '</b></span>
+    echo '<li class="list-group-item border-0"><span onclick="showNorm(\'minor\', \'' . $code . '\')" role="button"><i class="fas fa-search me-1" aria-hidden="true"></i> <b>' . $code . '</b></span>
                     <i class="fas fa-chevron-right" aria-hidden="true"></i> ' . count($minor["list"]) . '</li>';
 }
 ?>
@@ -128,7 +128,7 @@ function percentageColor($percentage)
                 <h5 class="text-center">Info</h5>
                 <ul class="list-group">
                 <?php foreach ($coding_style["info"]["list"] as $code => $info) {
-    echo '<li class="list-group-item border-0"><span onclick="showNorm(\'info\', \''.$code.'\')" role="button"><i class="fas fa-search me-1" aria-hidden="true"></i> <b>' . $code . '</b></span>
+    echo '<li class="list-group-item border-0"><span onclick="showNorm(\'info\', \'' . $code . '\')" role="button"><i class="fas fa-search me-1" aria-hidden="true"></i> <b>' . $code . '</b></span>
                     <i class="fas fa-chevron-right" aria-hidden="true"></i> ' . count($info["list"]) . '</li>';
 }
 ?>
@@ -140,22 +140,54 @@ function percentageColor($percentage)
         <div>
             <h3 class="mb-5">Coverage</h3>
             <div class="d-flex">
-                <div><svg class="radial-progress" data-percentage="71" viewBox="0 0 80 80">
-                        <circle stroke="var(--bs-gray-200)" class="incomplete" cx="40" cy="40" r="35"></circle>
-                        <circle stroke="var(--bs-<?php echo percentageColor($result["coverage"]); ?>)" class="complete" cx="40" cy="40" r="35"
-                            style="stroke-dashoffset: <?php echo 220 - 2.2 * $result["coverage"]; ?>px;"></circle>
-                        <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)"><?php echo $result["coverage"]; ?>%</text>
-                    </svg>
-                    <p class="text-center">Coverage</p>
-                </div>
-                <div>
-                    <svg class="radial-progress" data-percentage="71" viewBox="0 0 80 80">
-                        <circle stroke="var(--bs-gray-200)" class="incomplete" cx="40" cy="40" r="35"></circle>
-                        <circle stroke="var(--bs-<?php echo percentageColor($result["branches"]); ?>)" class="complete" cx="40" cy="40" r="35"
-                            style="stroke-dashoffset: <?php echo 220 - 2.2 * $result["branches"]; ?>px;"></circle>
-                        <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)"><?php echo $result["branches"]; ?>%</text>
-                    </svg>
-                    <p class="text-center">Branches</p>
+                <div class="d-flex">
+                    <div><svg class="radial-progress" data-percentage="71" viewBox="0 0 80 80">
+                            <circle stroke="var(--bs-gray-200)" class="incomplete" cx="40" cy="40" r="35"></circle>
+                            <circle stroke="var(--bs-<?php echo percentageColor($result["coverage"]); ?>)" class="complete" cx="40" cy="40" r="35"
+                                style="stroke-dashoffset: <?php echo 220 - 2.2 * $result["coverage"]; ?>px;"></circle>
+                            <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)"><?php echo $result["coverage"]; ?>%</text>
+                        </svg>
+                        <p class="text-center">Coverage</p>
+                    </div>
+                    <div>
+                        <svg class="radial-progress" data-percentage="71" viewBox="0 0 80 80">
+                            <circle stroke="var(--bs-gray-200)" class="incomplete" cx="40" cy="40" r="35"></circle>
+                            <circle stroke="var(--bs-<?php echo percentageColor($result["branches"]); ?>)" class="complete" cx="40" cy="40" r="35"
+                                style="stroke-dashoffset: <?php echo 220 - 2.2 * $result["branches"]; ?>px;"></circle>
+                            <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)"><?php echo $result["branches"]; ?>%</text>
+                        </svg>
+                        <p class="text-center">Branches</p>
+                    </div>
+                    <div><?php
+                    $coverage_data = json_decode($result["cover_data"]);
+                    if (count($coverage_data) > 0) {
+                        echo '<table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="col">Fichier</th>
+                            <th scope="col">Lignes</th>
+                            <th scope="col">Exec</th>
+                            <th scope="col">Cover</th>
+                            <th scope="col">Manquantes</th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        foreach($coverage_data as $data) {
+                            echo '<tr>
+                            <th scope="row">'.$data["file"].'</th>
+                            <td>'.$data["lines"].'</td>
+                            <td>'.$data["exec"].'</td>
+                            <td>'.$data["cover"].'</td>
+                            <td>'.array_map(function ($e) {
+                                return "<span class=\"badge bg-primary\">$e</span>";
+                            }, $data["missing"]).'</td>
+                            </tr>';
+                        }
+                        echo '</tbody>
+                        </table>';
+                    }
+                    ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -195,7 +227,7 @@ foreach ($tests as $index => $category) {
         const data_coding_style = <?php echo json_encode($coding_style); ?>,
         data_tests = <?php echo json_encode($tests); ?>;
     </script>
-<?php include $_SERVER["DOCUMENT_ROOT"]."/php/footer.php";?>
+<?php include $_SERVER["DOCUMENT_ROOT"] . "/php/footer.php";?>
 </body>
 
 </html>

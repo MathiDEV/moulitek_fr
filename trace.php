@@ -178,7 +178,7 @@ foreach ($coding_style["major"]["list"] as $code => $major) {
                         <tbody class="border-top-0">';
                         foreach($coverage_data as $data) {
                             echo '<tr>
-                            <th scope="row">'.$data["file"].'</th>
+                            <td>'.$data["file"].'</td>
                             <td>'.$data["lines"].'</td>
                             <td>'.$data["exec"].'</td>
                             <td>'.$data["cover"].'</td>

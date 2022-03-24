@@ -161,7 +161,7 @@ foreach ($coding_style["major"]["list"] as $code => $major) {
                     <?php
                     $coverage_data = json_decode($result["cover_data"], true);
                     if (count($coverage_data) > 0) {
-                        echo '<div><table class="table">
+                        echo '<div><table class="table" style="max-height: 200px; overflow-y: scroll;">
                         <thead>
                             <tr>
                             <th scope="col">Fichier</th>
@@ -171,7 +171,7 @@ foreach ($coding_style["major"]["list"] as $code => $major) {
                             <th scope="col">Manquantes</th>
                             </tr>
                         </thead>
-                        <tbody style="max-height: 200px; overflow-y: scroll;">';
+                        <tbody>';
                         foreach($coverage_data as $data) {
                             echo '<tr>
                             <th scope="row">'.$data["file"].'</th>

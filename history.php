@@ -6,7 +6,7 @@ if (!isset($_SESSION["user"])) {
 if (!isset($_GET["id"])) {
     header("Location: /");
 }
-require "php/mysql.php";
+require $_SERVER["DOCUMENT_ROOT"] . "php/mysql.php";
 
 $stmt = $mysql->prepare("SELECT * FROM `repos` WHERE `owner` = ? AND `id` = ?");
 $stmt->bind_param("ss", $_SESSION["user"], $_GET["id"]);

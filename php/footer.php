@@ -111,6 +111,7 @@
                 <div class="col-md-6 item text">
                     <h3>Moulitek</h3>
                     <p>Moulitek est un outil spécialisé dans l'audit de fonctionnalités des programmes. Il met à disposition un large panel de tests fonctionnels, entièrement automatisés pour les projets EPITECH.</p>
+                    <p>⚠️ Toutes attaques visant les infrastructures de Socialeo, hébergeur de moulitek.fr, ne sont pas cautionnées. Chaque attaque se terminera par des poursuites systématiques par Socialeo et la Ville de Roanne.</p>
                 </div>
             </div>
             <hr>

@@ -90,7 +90,12 @@ pre {
     scrollbar-width: none;
 }
 
-pre::-webkit-scrollbar {
+.coverage-table {
+    ms-overflow-style: none;
+}
+
+pre::-webkit-scrollbar,
+.coverage-table::-webkit-scrollbar {
     display: none;
 }
 

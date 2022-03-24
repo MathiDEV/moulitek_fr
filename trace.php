@@ -165,7 +165,7 @@ foreach ($coding_style["major"]["list"] as $code => $major) {
                 <?php
                     $coverage_data = json_decode($result["cover_data"], true);
                     if (count($coverage_data) > 0) {
-                        echo '<div style="max-height: 281px; overflow-y: scroll;"><table class="table">
+                        echo '<div class="coverage-table" style="max-height: 281px; overflow-y: scroll;"><table class="table">
                         <thead>
                             <tr>
                             <th scope="col">Fichier</th>

@@ -53,17 +53,38 @@ function showCards($res)
         }
         if ($result = getResult($results)) {
             $date = date("d/m/Y H:i", strtotime($result["date"]));
-			$cs_sum = json_decode($result["cs_sum"], true);
+            $cs_sum = json_decode($result["cs_sum"], true);
             $body = str_replace(
                 ["{percentage}", "{percentage_color}", "{majors}", "{minors}", "{infos}", "{coverage_color}", "{coverage_offset}", "{coverage}", "{branches_color}", "{branches_offset}", "{branches}"],
                 [round($result["percentage"], 1), percentageColor($result["percentage"]), $cs_sum[0], $cs_sum[1], $cs_sum[2], percentageColor($result["coverage"]), 220 - 2.2 * $result["coverage"], $result["coverage"], percentageColor($result["branches"]), 220 - 2.2 * $result["branches"], $result["branches"]],
                 $res_body);
-            $details = "href=\"/details/".$result["id"]."\"";
+            $details = "href=\"/details/" . $result["id"] . "\"";
         } else {
             $date = "";
             $body = $no_mouli;
             $details = "";
         }
+        echo (str_replace(["{name}", "{date}", "{card_body}", "{project_id}", "{loading_class}", "{display_loading}", "{loading_content}", "{details_href}"], [htmlspecialchars($repo["name"]), $date, $body, $repo["id"], ...$loading_data, $details], $card));
+    }
+}
+
+function showCardsHistory($repo)
+{
+    global $mysql, $res_body, $card;
+    $stmt = $mysql->prepare("SELECT `id`, `date`, `status`,`percentage`,`coverage`,`branches`,`cs_sum` FROM `mouli` WHERE `project` = ? AND `status` = 1 ORDER BY `date` DESC LIMIT 10");
+    $stmt->bind_param("s", $repo["id"]);
+    $stmt->execute();
+    $res = $stmt->get_result();
+    $results = $res->fetch_all(MYSQLI_ASSOC);
+    foreach ($results as $result) {
+        $loading_data = ["", "", ""];
+        $date = date("d/m/Y H:i", strtotime($result["date"]));
+        $cs_sum = json_decode($result["cs_sum"], true);
+        $body = str_replace(
+            ["{percentage}", "{percentage_color}", "{majors}", "{minors}", "{infos}", "{coverage_color}", "{coverage_offset}", "{coverage}", "{branches_color}", "{branches_offset}", "{branches}"],
+            [round($result["percentage"], 1), percentageColor($result["percentage"]), $cs_sum[0], $cs_sum[1], $cs_sum[2], percentageColor($result["coverage"]), 220 - 2.2 * $result["coverage"], $result["coverage"], percentageColor($result["branches"]), 220 - 2.2 * $result["branches"], $result["branches"]],
+            $res_body);
+        $details = "href=\"/details/" . $result["id"] . "\"";
         echo (str_replace(["{name}", "{date}", "{card_body}", "{project_id}", "{loading_class}", "{display_loading}", "{loading_content}", "{details_href}"], [htmlspecialchars($repo["name"]), $date, $body, $repo["id"], ...$loading_data, $details], $card));
     }
 }

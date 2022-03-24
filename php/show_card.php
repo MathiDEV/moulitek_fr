@@ -85,6 +85,6 @@ function showCardsHistory($repo)
             [round($result["percentage"], 1), percentageColor($result["percentage"]), $cs_sum[0], $cs_sum[1], $cs_sum[2], percentageColor($result["coverage"]), 220 - 2.2 * $result["coverage"], $result["coverage"], percentageColor($result["branches"]), 220 - 2.2 * $result["branches"], $result["branches"]],
             $res_body);
         $details = "href=\"/details/" . $result["id"] . "\"";
-        echo (str_replace(["{name}", "{date}", "{card_body}", "{project_id}", "{loading_class}", "{display_loading}", "{loading_content}", "{details_href}"], [htmlspecialchars($repo["name"]), $date, $body, $repo["id"], ...$loading_data, $details], $card));
+        echo (str_replace(["{name}", "{date}", "{card_body}", "{project_id}", "{loading_class}", "{display_loading}", "{loading_content}", "{details_href}", "{history_id}"], [htmlspecialchars($repo["name"]), $date, $body, $repo["id"], ...$loading_data, $details, $repo["id"]], $card));
     }
 }

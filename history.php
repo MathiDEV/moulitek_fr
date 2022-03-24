@@ -1,11 +1,11 @@
 <?php
 session_start();
-if (!isset($_SESSION["user"])) {
-    header("Location: /signup");
-}
-if (!isset($_GET["id"])) {
-    header("Location: /");
-}
+// if (!isset($_SESSION["user"])) {
+//     header("Location: /signup");
+// }
+// if (!isset($_GET["id"])) {
+//     header("Location: /");
+// }
 // require $_SERVER["DOCUMENT_ROOT"] . "/php/mysql.php";
 
 // $stmt = $mysql->prepare("SELECT * FROM `repos` WHERE `owner` = ? AND `id` = ?");

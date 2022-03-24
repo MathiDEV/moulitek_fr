@@ -139,7 +139,7 @@ function percentageColor($percentage)
     <div style="gap: 10px" class="rounded shadow-sm mt-3 mb-5 mx-4 row bg-white p-4">
         <div>
             <h3 class="mb-5">Coverage</h3>
-            <div class="col-3 cs-sum">
+            <div class="d-flex">
                 <div><svg class="radial-progress" data-percentage="71" viewBox="0 0 80 80">
                         <circle stroke="var(--bs-gray-200)" class="incomplete" cx="40" cy="40" r="35"></circle>
                         <circle stroke="var(--bs-<?php echo percentageColor($result["coverage"]); ?>)" class="complete" cx="40" cy="40" r="35"

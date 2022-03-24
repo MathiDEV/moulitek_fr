@@ -77,8 +77,10 @@ function get_content($line, $delimiter)
 }
 
 while ($i < $line_count - 1) {
-	if (!$result["build"])
-		break;
+    if (!$result["build"]) {
+        break;
+    }
+
     $i++;
     if ($current == "none") {
         if ($lines[$i] == "[covr]") {
@@ -110,11 +112,11 @@ while ($i < $line_count - 1) {
             continue;
         }
 
-        if ($line_split[0] == "[##]") {
+        if ($line_split[0] == "[##]" || $line_split[0] == "[i]") {
             $current = "none";
             $test_num = -1;
             $test_cat++;
-            $result["tests"][] = ["name" => get_content($lines[$i], "##")["content"], "total" => 0, "failed" => 0, "tests" => []];
+            $result["tests"][] = ["info" => ($line_split[0] == "[i]"), "name" => get_content($lines[$i], "##")["content"], "total" => 0, "failed" => 0, "tests" => []];
             continue;
         }
 
@@ -155,6 +157,10 @@ while ($i < $line_count - 1) {
 $total = 0;
 $total_failed = 0;
 foreach ($result["tests"] as $k => $test) {
+    if ($test["info"]) {
+        continue;
+    }
+
     $result["tests"][$k]["total"] = count($test["tests"]);
     $total += $result["tests"][$k]["total"];
     $result["tests"][$k]["failed"] = count(array_filter($test["tests"], function ($e) {

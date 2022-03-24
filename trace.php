@@ -171,7 +171,7 @@ foreach ($coding_style["major"]["list"] as $code => $major) {
                             <th scope="col">Manquantes</th>
                             </tr>
                         </thead>
-                        <tbody>';
+                        <tbody style="max-height: 200px; overflow-y: scroll;">';
                         foreach($coverage_data as $data) {
                             echo '<tr>
                             <th scope="row">'.$data["file"].'</th>

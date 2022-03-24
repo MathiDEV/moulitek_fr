@@ -76,7 +76,6 @@ function showCardsHistory($repo)
     $stmt->execute();
     $res = $stmt->get_result();
     $results = $res->fetch_all(MYSQLI_ASSOC);
-    var_dump($repo["id"]);
     foreach ($results as $result) {
         $loading_data = ["", "", ""];
         $date = date("d/m/Y H:i", strtotime($result["date"]));

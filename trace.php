@@ -180,7 +180,7 @@ foreach ($coding_style["major"]["list"] as $code => $major) {
                             <td>'.$data["cover"].'</td>
                             <td>';
                             foreach ($data["missing"] as $missing) {
-                                echo "<span class=\"badge bg-primary\">$missing</span>";
+                                echo "<span class=\"badge bg-primary mx-1\">$missing</span>";
                             }
                             echo '</td>
                             </tr>';

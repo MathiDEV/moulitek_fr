@@ -12,8 +12,8 @@ $stmt = $mysql->prepare("SELECT * FROM `repos` WHERE `owner` = ? AND `id` = ?");
 $stmt->bind_param("ss", $_SESSION["user"], $_GET["id"]);
 $stmt->execute();
 $res = $stmt->get_result();
-$repo = $res->fetch_all(MYSQLI_ASSOC);
-if (!$repo) {
+$repo_data = $res->fetch_array(MYSQLI_ASSOC);
+if (!$repo_data) {
     header("Location: /");
 }
 ?>
@@ -41,7 +41,7 @@ if (!$repo) {
     <div class="projects row mx-2 justify-content-around">
         <?php
 require $_SERVER["DOCUMENT_ROOT"] . "/php/show_card.php";
-showCardsHistory($repo);
+showCardsHistory($repo_data);
 ?>
     </div>
     <?php include $_SERVER["DOCUMENT_ROOT"] . "/php/footer.php";?>

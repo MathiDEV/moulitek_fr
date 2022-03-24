@@ -1,21 +1,21 @@
 <?php
 session_start();
-// if (!isset($_SESSION["user"])) {
-//     header("Location: /signup");
-// }
-// if (!isset($_GET["id"])) {
-//     header("Location: /");
-// }
-// require $_SERVER["DOCUMENT_ROOT"] . "/php/mysql.php";
+if (!isset($_SESSION["user"])) {
+    header("Location: /signup");
+}
+if (!isset($_GET["id"])) {
+    header("Location: /");
+}
+require $_SERVER["DOCUMENT_ROOT"] . "/php/mysql.php";
 
-// $stmt = $mysql->prepare("SELECT * FROM `repos` WHERE `owner` = ? AND `id` = ?");
-// $stmt->bind_param("ss", $_SESSION["user"], $_GET["id"]);
-// $stmt->execute();
-// $res = $stmt->get_result();
-// $repo = $res->fetch_all(MYSQLI_ASSOC);
-// if (!$repo) {
-//     header("Location: /");
-// }
+$stmt = $mysql->prepare("SELECT * FROM `repos` WHERE `owner` = ? AND `id` = ?");
+$stmt->bind_param("ss", $_SESSION["user"], $_GET["id"]);
+$stmt->execute();
+$res = $stmt->get_result();
+$repo = $res->fetch_all(MYSQLI_ASSOC);
+if (!$repo) {
+    header("Location: /");
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">

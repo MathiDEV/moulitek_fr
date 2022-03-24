@@ -138,8 +138,9 @@ foreach ($coding_style["major"]["list"] as $code => $major) {
     </div>
     <div style="gap: 10px" class="rounded shadow-sm mt-3 mb-5 mx-4 row bg-white p-4">
         <div>
-            <h3 class="mb-5">Coverage</h3>
             <div style="gap: 20px;" class="d-flex">
+            <div>
+            <h3 class="mb-5">Coverage</h3>
                 <div class="d-flex">
                     <div><svg class="radial-progress" data-percentage="71" viewBox="0 0 80 80">
                             <circle stroke="var(--bs-gray-200)" class="incomplete" cx="40" cy="40" r="35"></circle>
@@ -159,6 +160,8 @@ foreach ($coding_style["major"]["list"] as $code => $major) {
                         <p class="text-center">Branches</p>
                     </div>
                 </div>
+                </div>
+
                 <?php
                     $coverage_data = json_decode($result["cover_data"], true);
                     if (count($coverage_data) > 0) {

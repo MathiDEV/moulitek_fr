@@ -178,9 +178,11 @@ foreach ($coding_style["major"]["list"] as $code => $major) {
                             <td>'.$data["lines"].'</td>
                             <td>'.$data["exec"].'</td>
                             <td>'.$data["cover"].'</td>
-                            <td>'.array_map(function ($e) {
-                                return "<span class=\"badge bg-primary\">$e</span>";
-                            }, $data["missing"]).'</td>
+                            <td>';
+                            foreach ($data["missing"] as $missing) {
+                                echo "<span class=\"badge bg-primary\">$missing</span>";
+                            }
+                            echo '</td>
                             </tr>';
                         }
                         echo '</tbody>

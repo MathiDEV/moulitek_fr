@@ -67,7 +67,8 @@ function showCards($res)
         echo (str_replace(["{name}", "{date}", "{card_body}", "{project_id}", "{loading_class}", "{display_loading}", "{loading_content}", "{details_href}", "{history_id}"], [htmlspecialchars($repo["name"]), $date, $body, $repo["id"], ...$loading_data, $details, $repo["id"]], $card));
     }
 }
-
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 function showCardsHistory($repo)
 {
     global $mysql, $res_body, $card;

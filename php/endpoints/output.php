@@ -54,15 +54,14 @@ if ($trace["coverage"] && $trace["branches"]) {
 $total = 0;
 $total_failed = 0;
 foreach ($result["tests"] as $k => $test) {
-    if ($test["info"]) {
-        continue;
-    }
     $result["tests"][$k]["total"] = count($test["sequences"]);
-    $total += $result["tests"][$k]["total"];
     $result["tests"][$k]["failed"] = count(array_filter($test["sequences"], function ($e) {
         return $e["passed"] == false;
     }));
-    $total_failed += $result["tests"][$k]["failed"];
+    if (!$test["info"]) {
+        $total += $result["tests"][$k]["total"];
+        $total_failed += $result["tests"][$k]["failed"];
+    }
     if ($result["tests"][$k]["total"] == 0) {
         $result["tests"][$k]["percent"] = 100;
     } else {

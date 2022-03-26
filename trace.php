@@ -202,7 +202,7 @@ $test_cat_box = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/templates/test_c
 
 foreach ($tests as $index => $category) {
     $tests_body = "";
-    foreach ($category["tests"] as $k => $test) {
+    foreach ($category["sequences"] as $k => $test) {
         $tests_body .= '<li class="list-group-item border-0"><i class="fas fa-' . ($test["passed"] ? "check" : "times") . ' me-1" aria-hidden="true"></i>
             ' . htmlspecialchars(ucfirst($test["name"])) . '
             <i onclick="showTests(' . $index . ', ' . $k . ')" role="button" class="fas fa-question-circle text-muted" aria-hidden="true"></i></li>';

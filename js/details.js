@@ -9,8 +9,8 @@ function showTests(category, index) {
         $("#mainmodal .modal-body").first().html("").removeClass("d-none");
         $("#mainmodal .modal-body").last().addClass("d-none")
         $("#mainmodal .modal-title").text(tests["name"].charAt(0).toUpperCase() + tests["name"].slice(1));
-        for (i in tests["list"]) {
-            let test = tests["list"][i],
+        for (i in tests["tests"]) {
+            let test = tests["tests"][i],
                 expected_got = ""
             if (test["expected"] && test["got"]) {
                 expected_got = " <i role=\"button\" onclick=\"showExpectedGot(" + category + "," + index + "," + i + ")\" class=\"fas fa-circle-info\"></i>"
@@ -22,7 +22,7 @@ function showTests(category, index) {
 }
 
 function showExpectedGot(category, index, test) {
-    if (test = data_tests[category]["sequences"][index]["list"][test]) {
+    if (test = data_tests[category]["sequences"][index]["tests"][test]) {
         if (test["expected"] && test["got"]) {
             if (test["reason"] && fail_reson[test["reason"]])
                 reason = fail_reson[test["reason"]]

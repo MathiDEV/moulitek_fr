@@ -26,11 +26,13 @@ $result = [
     "tests" => $trace["tests"],
 ];
 
-function parse_coverage($result, $type)
+function parse_coverage($res, $type)
 {
-    $lines = explode("\n", $result);
-    $i = 3;
-    while (strpos($lines[$i], "----------") == false) {
+    global $result;
+
+    $lines = explode("\n", $res);
+    $i = 6;
+    while ($i < count($lines) && $lines[$i][0] != "-") {
         $file = array_values(array_filter(explode(" ", $lines[$i])));
         if (count($file) == 4) {
             $file[] = "";
@@ -38,6 +40,7 @@ function parse_coverage($result, $type)
         if (count($file) == 5) {
             $result[$type]["files"][] = ["file" => $file[0], "lines" => intval($file[1]), "exec" => intval($file[2]), "cover" => intval($file[3]), "missing" => array_values(array_filter(explode(",", $file[4])))];
         }
+        $i++;
     }
     $i++;
     $result[$type]["total"] = intval(array_values(array_filter(explode(" ", $lines[$i])))[3]);

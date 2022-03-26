@@ -1,8 +1,9 @@
 const fail_reson = {
-    'retvalue': "<i class=\"fas fa-arrow-turn-down-left\"></i> Mauvaise valeur de retour.",
-    'badoutput': "<i class=\"fas fa-terminal\"></i> Mauvaise sortie standard.",
-    'timeout': "<i class=\"fas fa-timer\"></i> Délai dépassé.",
-    'other': "<i class=\"fas fa-question\"></i> Motif inconnu.",
+    'RETVALUE': "<i class=\"fas fa-arrow-turn-down-left\"></i> Mauvaise valeur de retour.",
+    'BADOUTPUT': "<i class=\"fas fa-terminal\"></i> Mauvaise sortie standard.",
+    'TIMEOUT': "<i class=\"fas fa-timer\"></i> Délai dépassé.",
+    'SEGFAULT': "<i class=\"fas fa-triangle-exclamation\"></i> Segmentation fault.",
+    'OTHER': "<i class=\"fas fa-question\"></i> Motif inconnu.",
 }
 function showTests(category, index) {
     if (tests = data_tests[category]["sequences"][index]) {
@@ -27,7 +28,7 @@ function showExpectedGot(category, index, test) {
             if (test["reason"] && fail_reson[test["reason"]])
                 reason = fail_reson[test["reason"]]
             else
-                reason = fail_reson["other"]
+                reason = fail_reson["OTHER"]
             $("#mainmodal .modal-body").last().html("<p class=\"text-primary\" onclick=\"swapModal()\" role=\"button\"><i class=\"fas fa-chevron-left\"></i> Retour</p><h5>Motif:</h5><p class=\"text-muted\">" + reason + "</p><hr><h5>Attendu:</h5><pre class=\"p-2\">" + test["expected"] + "</pre><h5>Obtenu:</h5><pre class=\"p-2\">" + test["got"] + "</pre>");
             $("#mainmodal .modal-body").toggleClass("d-none");
         }

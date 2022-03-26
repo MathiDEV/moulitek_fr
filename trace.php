@@ -207,7 +207,7 @@ foreach ($tests as $index => $category) {
             ' . htmlspecialchars(ucfirst($test["name"])) . '
             <i onclick="showTests(' . $index . ', ' . $k . ')" role="button" class="fas fa-question-circle text-muted" aria-hidden="true"></i></li>';
     }
-    echo str_replace(["{name}", "{percentage}", "{percentage_color}", "{total}", "{passed}", "{failed}", "{crashed}", "{tests_body}"], [htmlspecialchars($category["name"]), round($category["percent"], 1), percentageColor($category["percent"]), $category["total"], $category["total"] - $category["failed"], $category["failed"], 0, $tests_body], $test_cat_box);
+    echo str_replace(["{name}", "{percentage}", "{percentage_color}", "{total}", "{passed}", "{failed}", "{crashed}", "{tests_body}", "{info-italic}", "{info-display}"], [htmlspecialchars($category["name"]), round($category["percent"], 1), ($category["info"] ? "primary" : percentageColor($category["percent"])), $category["total"], $category["total"] - $category["failed"], $category["failed"], 0, $tests_body, ($category["info"] ? " font-italic" : ""), ($category["info"] ? " d-none" : "")], $test_cat_box);
 }
 ?>
     <div class="modal" id="mainmodal" tabindex="-1">

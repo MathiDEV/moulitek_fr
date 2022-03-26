@@ -5,7 +5,7 @@ const fail_reson = {
     'other': "<i class=\"fas fa-question\"></i> Motif inconnu.",
 }
 function showTests(category, index) {
-    if (tests = data_tests[category]["tests"][index]) {
+    if (tests = data_tests[category]["sequences"][index]) {
         $("#mainmodal .modal-body").first().html("").removeClass("d-none");
         $("#mainmodal .modal-body").last().addClass("d-none")
         $("#mainmodal .modal-title").text(tests["name"].charAt(0).toUpperCase() + tests["name"].slice(1));
@@ -22,7 +22,7 @@ function showTests(category, index) {
 }
 
 function showExpectedGot(category, index, test) {
-    if (test = data_tests[category]["tests"][index]["list"][test]) {
+    if (test = data_tests[category]["sequences"][index]["list"][test]) {
         if (test["expected"] && test["got"]) {
             if (test["reason"] && fail_reson[test["reason"]])
                 reason = fail_reson[test["reason"]]

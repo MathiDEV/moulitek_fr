@@ -6,4 +6,5 @@ if (!$mysql) {
     exit;
 }
 $mysql->set_charset("utf8");
+$mysql->query("DELETE FROM `mouli` WHERE `status` = 0 AND `date` < DATE_SUB(NOW(), INTERVAL 15 MINUTE)");
 ?>
